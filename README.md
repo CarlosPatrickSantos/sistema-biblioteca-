@@ -8,7 +8,7 @@
 - Java
 - MySQL
 
-## Desenvolvedores 
+## Time de Desenvolvedores 
 
 - Carlos Patrick Pereira dos Santos
 
