@@ -1,4 +1,4 @@
-# sistema-biblioteca-
+﻿# sistema-biblioteca-
 
 ## Status do Projeto
 - Em andamento
@@ -14,7 +14,8 @@
 
 ## Objetivo do Software
 
-- O objetivo do softwere é criar uma plataforma para o cadastro de livros, cadastro de clientes
+- O objetivo do software é criar uma plataforma para o cadastro de
+    livros, cadastro de clientes
     e gerenciamentos de empréstimos de livros, facilitando o controle e a 
     organização de uma biblioteca.
 
