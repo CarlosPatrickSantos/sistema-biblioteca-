@@ -5,7 +5,7 @@
 
 ## Tecnologias Aplicadas
 
-- Java
+- JavaScript
 - MySQL
 
 ## Time de Desenvolvedores 
