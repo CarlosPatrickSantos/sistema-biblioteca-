@@ -5,8 +5,11 @@
 
 ## Tecnologias Aplicadas
 
+- JavaWeb
 - JavaScript
+- CSS
 - MySQL
+
 
 ## Time de Desenvolvedores 
 
