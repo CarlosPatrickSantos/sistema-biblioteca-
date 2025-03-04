@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password">
+            <div class="button-container">
+               <button type="reset" class="btn-reset">Apagar</button>
+               <button type="submit" class="btn-submit">Login</button>
+               <button type="button" class="btn-exit" onclick="window.close()">Sair</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita o envio do formulário
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (email === "carlos" && password === "123") {
+        window.location.href = "/Biblioteca"; // Redireciona para a página da biblioteca
+    } else {
+        alert("Credenciais inválidas. Tente novamente.");
+    }
+});
+
+    </script>
+</body>
+</html>
+

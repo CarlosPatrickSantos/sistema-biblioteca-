@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+.sidebar { /* seria conteiner azul */
+    background-color: #4C79C0; /* Azul mais claro */
+    color: black; /* Deixa o texto preto para melhor contraste */
+    width: 250px; /* Aumentei um pouco */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold; /* Deixa o texto em negrito data */
+    font-size: 18px; /* Ajusta o tamanho do texto hora*/
+}
+
+
+.sidebar h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    background-color: #ccc; /* Fundo cinza igual na imagem */
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+
+.sidebar button { /* as letras dos botoes*/
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 90%;
+    border-radius: 5px;
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 18px; /* Ajusta o tamanho do texto */
+}
+
+.sidebar h2 { /* seria a hora */
+    margin-top: auto;
+    text-align: center;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centraliza a imagem */
+    align-items: center;
+    padding-left: 10px;
+}
+
+.main-content img {
+    width: 100%;
+    max-width: 650px; /* Limite da largura */
+    height: auto;
+    border-radius: 8px;
+}

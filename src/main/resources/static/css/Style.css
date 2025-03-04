@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Aumente o tamanho aqui */
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+}
+
+.btn-reset {
+    background-color: red;
+}
+
+.btn-reset:hover {
+    background-color: darkred;
+}
+
+.btn-submit {
+    background-color: green;
+}
+
+.btn-submit:hover {
+    background-color: darkgreen;
+}
+
+.btn-exit {
+    background-color: blue;
+}
+
+.btn-exit:hover {
+    background-color: darkblue;
+}
