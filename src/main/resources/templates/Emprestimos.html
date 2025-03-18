@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Empréstimos</title>
+    <link rel="stylesheet" href="css/Emprestimos.css">
+    <script>
+        // Funções JavaScript para interatividade
+        function selecionarCliente(id) {
+            document.getElementById("idCliente").value = id;
+        }
+
+        function selecionarLivro(id) {
+            document.getElementById("idLivro").value = id;
+        }
+
+        function calcularAtraso() {
+            const dataDev = new Date(document.getElementById("dataDevolucao").value);
+            const dataRealDev = new Date(document.getElementById("dataRealDevolucao").value);
+            const diff = Math.max(0, Math.ceil((dataRealDev - dataDev) / (1000 * 60 * 60 * 24))); // Dias de atraso
+            const multa = diff * 5; // R$ 5,00 por dia
+
+            document.getElementById("diasAtraso").value = diff + " dias";
+            document.getElementById("valorPagamento").value = multa.toFixed(2);
+        }
+
+        function limparCampos() {
+            document.getElementById("form-emprestimo").reset();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Empréstimos</h1>
+    </header>
+    
+    <!-- Pesquisa -->
+    <div class="pesquisa-container">
+        <h2>Pesquisar Cliente ou Livro</h2>
+        <form>
+            <label for="search">Pesquisar por:</label>
+            <select id="search">
+                <option value="clientes">Clientes</option>
+                <option value="livros">Livros</option>
+            </select>
+            <input type="text" placeholder="Digite o nome">
+            <button type="button">Pesquisar</button>
+        </form>
+    </div>
+
+    <!-- Seleção de Cliente -->
+    <div class="selecao-cliente">
+        <h3>Selecione o Cliente</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Maria Silva</td>
+                    <td><button type="button" onclick="selecionarCliente(1)">Selecionar</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>João Souza</td>
+                    <td><button type="button" onclick="selecionarCliente(2)">Selecionar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Seleção de Livro -->
+    <div class="selecao-livro">
+        <h3>Selecione o Livro</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Aventuras na Programação</td>
+                    <td><button type="button" onclick="selecionarLivro(101)">Selecionar</button></td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Java para Todos</td>
+                    <td><button type="button" onclick="selecionarLivro(102)">Selecionar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Detalhes do Empréstimo -->
+     <div class="emprestimo-detalhes">
+        <form id="form-emprestimo">
+            <label for="idCliente">ID Cliente:</label>
+            <input type="text" id="idCliente" readonly>
+            
+            <label for="idLivro">ID Livro:</label>
+            <input type="text" id="idLivro" readonly>
+            
+            <label for="dataEmprestimo">Data de Empréstimo:</label>
+            <input type="date" id="dataEmprestimo">
+            
+            <label for="dataDevolucao">Data de Devolução:</label>
+            <input type="date" id="dataDevolucao">
+            
+            <label for="dataRealDevolucao">Data Real de Devolução:</label>
+            <input type="date" id="dataRealDevolucao">
+            
+            <label for="diasAtraso">Dias de Atraso:</label>
+            <input type="text" id="diasAtraso" readonly>
+            
+            <label for="valorPagamento">Valor Pagamento (Multa):</label>
+            <input type="text" id="valorPagamento" readonly>
+            
+            <div class="botoes-centro">
+                <button type="button" onclick="calcularAtraso()">Calcular</button>
+                <button type="button" onclick="limparCampos()">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="botao-voltar">
+        <button type="button" onclick="window.history.back();">Voltar</button>
+    </div>
+</body>
+</html>
