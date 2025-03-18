@@ -28,7 +28,7 @@
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
               /* senha e password*/
-    if (email === "carlos" && password === "123") {
+    if (email.toLowerCase() === "carlos" && password === "123") {
         window.location.href = "/Biblioteca"; // Redireciona para a página da biblioteca
     } else {
         alert("Credenciais inválidas. Tente novamente.");
