@@ -45,6 +45,12 @@ public class WebController {
         System.out.println("Showing tela cadastro de livros");
         return "CadastroLivros"; // Retorna CadastroLivros.html
     }
+    
+    @RequestMapping("/Emprestimos")
+    public String emprestimos() {
+        System.out.println("Exibindo tela de empréstimos");
+        return "Emprestimos"; // Retorna Emprestimos.html
+    }
 
     
 }
