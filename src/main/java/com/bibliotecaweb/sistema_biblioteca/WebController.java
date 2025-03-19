@@ -48,10 +48,18 @@ public class WebController {
     
     @RequestMapping("/Emprestimos")
     public String emprestimos() {
-        System.out.println("Exibindo tela de empréstimos");
+        System.out.println("Exibindo tela de emprestimos");
         return "Emprestimos"; // Retorna Emprestimos.html
     }
-
-    
+@RequestMapping("/Buscar")
+    public String buscar() {
+        System.out.println("Exibindo tela de busca");
+        return "Buscar"; // Retorna o arquivo Buscar.html
+    }
+     @RequestMapping("/Configuracoes")
+    public String configuracoes() {
+        System.out.println("Exibindo tela de configurações");
+        return "Configuracoes"; // Retorna o template Configuracoes.html
+    }
 }
 
