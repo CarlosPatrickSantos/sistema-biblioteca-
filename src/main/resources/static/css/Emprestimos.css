@@ -1,61 +1,146 @@
+/* Corpo */
 body {
-    background-color:     #0066cc;/*#0000FF;  Azul de fundo */
+    background-color: #f5f5f5; /* Cinza claro para fundo neutro */
     font-family: Arial, sans-serif;
-    color: white;
+    color: #333333; /* Cor de texto mais escura para maior visibilidade */
     margin: 0;
     padding: 0;
 }
 
+/* Cabeçalho */
 header {
     padding: 20px;
-    background-color: #0056b3;
+    background-color: #007bff; /* Azul claro mais neutro */
     text-align: center;
     color: white;
+    font-size: 24px; /* Texto mais visível */
 }
 
+/* Centralizar a seção de pesquisa */
+.pesquisa-container {
+    display: flex; /* Usa Flexbox para organizar elementos */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    margin: 20px auto; /* Adiciona espaço e centraliza no container */
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco para destaque */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    width: 50%; /* Define a largura da seção */
+    text-align: center; /* Centraliza o texto */
+}
+
+.pesquisa-container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333333; /* Texto mais visível */
+}
+
+.pesquisa-container form {
+    width: 100%; /* O formulário ocupa toda a largura */
+}
+
+.pesquisa-container label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pesquisa-container select,
+.pesquisa-container input {
+    width: calc(100% - 20px); /* Ajusta largura do campo com margem */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+.pesquisa-container button {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff; /* Azul suave */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pesquisa-container button:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+}
+/* Detalhes de empréstimo */
 .emprestimo-detalhes {
-    background-color: white;
+    background-color: #ffffff; /* Fundo branco para contraste */
     padding: 15px;
     margin: 20px auto;
     border-radius: 10px;
     width: 80%;
     text-align: left;
-    color: black;
+    color: #333333; /* Texto mais visível */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
 }
 
-.emprestimo-detalhes label, .emprestimo-detalhes input {
+.emprestimo-detalhes label, 
+.emprestimo-detalhes input {
     display: block;
     margin: 10px 0;
+    font-size: 16px; /* Texto mais legível */
 }
 
+/* Tabelas */
 table {
-    width: 100%;
+    margin: 20px auto; /* Centraliza a tabela */
+    width: 80%;
     border-collapse: collapse;
+    background-color: #ffffff; /* Fundo branco */
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #dddddd; /* Bordas suaves */
 }
 
 th, td {
-    padding: 8px;
+    text-align: center; /* Centraliza o conteúdo das células */
+    padding: 10px;
     text-align: left;
+    font-size: 14px;
+    color: #333333; /* Cor do texto */
 }
 
+th {
+    background-color: #f2f2f2; /* Fundo cinza claro para cabeçalhos */
+    font-weight: bold;
+}
+
+
+/* Centralizar os títulos das seções como "Selecione o Cliente" e "Selecione o Livro" */
+h3 {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin: 20px 0; /* Adiciona espaçamento acima e abaixo */
+    font-size: 20px; /* Tamanho maior para destaque */
+    color: #333333; /* Torna o texto mais visível */
+}
+
+
+
+/* Botões */
 button {
-    background-color: green;
+    background-color: #6c757d; /* Cinza neutro */
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: darkgreen;
+    background-color: #5a6268; /* Cinza mais escuro para hover */
 }
 
-/* Centralizar os botões "Calcular" e "Limpar" */
+/* Centralizar os botões */
 .botoes-centro {
     text-align: center;
     margin-top: 20px;
@@ -65,7 +150,7 @@ button:hover {
     margin: 0 10px;
 }
 
-/* Posicionar o botão "Voltar" no canto inferior direito */
+/* Botão de voltar */
 .botao-voltar {
     position: fixed;
     bottom: 20px;
@@ -73,7 +158,7 @@ button:hover {
 }
 
 .botao-voltar button {
-    background-color: #6c757d; /* Cinza */
+    background-color: #007bff; /* Azul mais suave */
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -83,5 +168,5 @@ button:hover {
 }
 
 .botao-voltar button:hover {
-    background-color: #5a6268; /* Cinza mais escuro */
+    background-color: #0056b3; /* Azul levemente mais escuro para hover */
 }
