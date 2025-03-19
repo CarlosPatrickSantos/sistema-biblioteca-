@@ -57,7 +57,7 @@ header {
 }
 
 .pesquisa-container button {
-    width: 50%;
+    width: 50%; /* Largura do botão Pesquisar */
     padding: 10px;
     background-color: #007bff; /* Azul suave */
     color: white;
