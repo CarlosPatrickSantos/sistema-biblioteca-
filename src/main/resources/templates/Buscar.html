@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar</title>
+    <link rel="stylesheet" href="/css/buscar.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Buscar</h1>
+        <form id="searchForm">
+            <div class="radio-buttons">
+                <label>
+                    <input type="radio" name="searchType" value="cliente"> Cliente
+                </label>
+                <label>
+                    <input type="radio" name="searchType" value="autor"> Autor
+                </label>
+                <label>
+                    <input type="radio" name="searchType" value="emprestimo"> Empréstimo
+                </label>
+            </div>
+            <div class="search-field">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <button type="button" id="pesquisar">Pesquisar</button>
+                <button type="button" onclick="window.history.back();">Voltar</button>
+            </div>
+        </form>
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Fone/Título</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Resultados serão inseridos aqui -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
