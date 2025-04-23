@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 public class CustomPortConfig implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
-        factory.setPort(8081); // Configurando a porta para 8081
+        factory.setPort(8080); // Configurando a porta para 8080
     }
 }
