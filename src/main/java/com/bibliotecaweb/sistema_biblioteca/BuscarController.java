@@ -41,7 +41,7 @@ public class BuscarController {
             case "emprestimo":
                 return emprestimoRepository.findByCliente_NomeContainingIgnoreCase(valor);
             default:
-                return List.of(); // Retorna uma lista vazia caso o tipo seja inválido
+                return List.of();
         }
     }
 }
