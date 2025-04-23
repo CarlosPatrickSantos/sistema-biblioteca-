@@ -7,28 +7,55 @@
     <link rel="stylesheet" href="/css/CadastroLivros.css">
 
     <script>
-        function cadastrarlivro() {
-            // Verificar se todos os campos estão preenchidos tela de Cadastro Livros
-            var titulo = document.getElementById("titulo").value;
-            var autor = document.getElementById("autor").value;
-            var edicao = document.getElementById("edicao").value;
+        async function cadastrarlivro(event) {
+            event.preventDefault(); // Evita o recarregamento da página
 
-            // Se algum campo estiver vazio, mostrar um alerta e não cadastrar
+            // Coletar os dados dos campos
+            const titulo = document.getElementById("titulo").value;
+            const autor = document.getElementById("autor").value;
+            const edicao = document.getElementById("edicao").value;
+
+            // Verificar se todos os campos estão preenchidos
             if (!titulo || !autor || !edicao) {
                 alert("Por favor, preencha todos os campos.");
-                return; // Impede o alerta de sucesso
+                return;
             }
 
-            // Se todos os campos estiverem preenchidos, mostrar mensagem de sucesso
-            alert("Livro cadastrado com sucesso!");
-            document.getElementById("formCadastro").reset(); // Limpa o formulário
+            // Dados do livro que serão enviados ao back-end
+            const livro = {
+                titulo: titulo,
+                autor: autor,
+                edicao: edicao
+            };
+
+            try {
+                // Enviar os dados ao back-end usando fetch
+                const response = await fetch("/livro", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(livro)
+                });
+
+                if (response.ok) {
+                    alert("Livro cadastrado com sucesso!");
+                    document.getElementById("formCadastro").reset(); // Limpa o formulário
+                } else {
+                    const error = await response.json();
+                    alert("Erro ao cadastrar livro: " + (error.message || "Erro desconhecido."));
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Erro ao conectar com o servidor. Tente novamente.");
+            }
         }
     </script>
 </head>
 <body>
     <div class="form-container">
         <h2>Cadastrar Livros</h2>
-        <form id="formCadastro">
+        <form id="formCadastro" onsubmit="cadastrarlivro(event)">
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" required><br><br>
 
@@ -39,7 +66,7 @@
             <input type="text" id="edicao" name="edicao" required><br><br>
 
             <button type="reset" class="limpar">Limpar</button>
-            <button type="button" class="cadastrar" onclick="cadastrarlivro()">Cadastrar</button>
+            <button type="submit" class="cadastrar">Cadastrar</button>
             <button type="button" class="sair" onclick="window.history.back();">Voltar</button>
         </form>
     </div>
