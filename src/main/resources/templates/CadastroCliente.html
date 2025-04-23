@@ -5,32 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Cliente</title>
     <link rel="stylesheet" href="/css/CadastroCliente.css">
-    
-    <script>
-        function cadastrocliente() {
-            // Verificar se todos os campos estão preenchidos Tela Cadastro Cliente
-            var nome = document.getElementById("nome").value;
-            var endereco = document.getElementById("endereco").value;
-            var cpf = document.getElementById("cpf").value;
-            var email = document.getElementById("email").value;
-            var telefone = document.getElementById("telefone").value;
 
-            // Se algum campo estiver vazio, mostrar um alerta e não cadastrar
+    <script>
+        async function cadastrocliente(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            // Coletar os dados dos campos
+            const nome = document.getElementById("nome").value;
+            const endereco = document.getElementById("endereco").value;
+            const cpf = document.getElementById("cpf").value;
+            const email = document.getElementById("email").value;
+            const telefone = document.getElementById("telefone").value;
+
+            // Verificar se todos os campos estão preenchidos
             if (!nome || !endereco || !cpf || !email || !telefone) {
                 alert("Por favor, preencha todos os campos.");
-                return; // Impede o alerta de sucesso
+                return;
             }
 
-            // Se todos os campos estiverem preenchidos, mostrar mensagem de sucesso
-            alert("Cliente cadastrado com sucesso!");
-            document.getElementById("formCadastro").reset(); // Limpa o formulário
+            // Dados a serem enviados para o back-end
+            const cliente = {
+                nome: nome,
+                endereco: endereco,
+                cpf: cpf,
+                email: email,
+                telefone: telefone
+            };
+
+            try {
+                // Enviar os dados ao back-end usando fetch
+                const response = await fetch("/cliente", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(cliente)
+                });
+
+                if (response.ok) {
+                    alert("Cliente cadastrado com sucesso!");
+                    document.getElementById("formCadastro").reset(); // Limpa o formulário
+                } else {
+                    const error = await response.json();
+                    alert("Erro ao cadastrar cliente: " + (error.message || "Erro desconhecido."));
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Erro ao conectar com o servidor. Tente novamente mais tarde.");
+            }
         }
     </script>
 </head>
 <body>
     <div class="form-container">
         <h2>Cadastrar Cliente</h2>
-        <form id="formCadastro">
+        <form id="formCadastro" onsubmit="cadastrocliente(event)">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
@@ -47,7 +76,7 @@
             <input type="text" id="telefone" name="telefone" required><br><br>
 
             <button type="reset">Limpar</button>
-            <button type="button" class="cadastrar" onclick="cadastrocliente()">Cadastrar</button>
+            <button type="submit" class="cadastrar">Cadastrar</button>
             <button type="button" onclick="window.history.back();">Voltar</button>
         </form>
     </div>
