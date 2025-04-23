@@ -11,18 +11,16 @@ import org.springframework.http.HttpStatus;
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
+
     @Autowired
     private ClienteService clienteService;
 
     @PostMapping
     public ResponseEntity<Cliente> cadastrarCliente(@RequestBody Cliente cliente) {
-        Cliente novoCliente = clienteService.salvarCliente(cliente);
+        Cliente novoCliente = clienteService.salvarCliente(cliente); // Persistência no banco
         return ResponseEntity.status(HttpStatus.CREATED).body(novoCliente);
     }
-
-    @GetMapping
-    public List<Cliente> listarClientes() {
-        return clienteService.listarClientes();
-    }
 }
+
+
 
