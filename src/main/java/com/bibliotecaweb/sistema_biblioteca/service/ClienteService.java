@@ -8,10 +8,15 @@ import java.util.List;
 
 @Service
 public class ClienteService {
+    
     @Autowired
     private ClienteRepository clienteRepository;
 
-   public Cliente salvarCliente(Cliente cliente) {
+ public Cliente salvarCliente(Cliente cliente) {
+    if (cliente.getNome() == null || cliente.getNome().isEmpty()) {
+        throw new IllegalArgumentException("O nome do cliente é obrigatório.");
+    }
+    // Outras validações podem ser adicionadas aqui
     try {
         return clienteRepository.save(cliente);
     } catch (Exception e) {
@@ -27,11 +32,13 @@ public class ClienteService {
         clienteRepository.deleteById(id);
     }
 
-  public Cliente atualizarCliente(Long id, Cliente clienteAtualizado) {
-    clienteAtualizado.setId(id); // Use a variável correta
+public Cliente atualizarCliente(Long id, Cliente clienteAtualizado) {
+    if (!clienteRepository.existsById(id)) {
+        throw new IllegalArgumentException("O cliente com ID " + id + " não existe.");
+    }
+    clienteAtualizado.setId(id); // Garante que o ID seja o correto
     return clienteRepository.save(clienteAtualizado);
 }
-  
 
 
 }
