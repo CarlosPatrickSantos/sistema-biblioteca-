@@ -61,5 +61,7 @@ public class WebController {
         System.out.println("Exibindo tela de configurações");
         return "Configuracoes"; // Retorna o template Configuracoes.html
     }
+    
+    
 }
 
