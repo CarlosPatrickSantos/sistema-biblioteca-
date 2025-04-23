@@ -24,37 +24,32 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ticks
  */
 @RestController
-@RequestMapping("/livros")
-
+@RequestMapping("/livro")
 public class LivroController {
-     @Autowired
+
+    @Autowired
     private LivroService livroService;
 
-    // Endpoint para cadastrar um novo livro
     @PostMapping
     public ResponseEntity<Livro> cadastrarLivro(@RequestBody Livro livro) {
         Livro novoLivro = livroService.salvarLivro(livro);
         return ResponseEntity.status(HttpStatus.CREATED).body(novoLivro);
     }
 
-    // Endpoint para listar todos os livros
     @GetMapping
-    public List<Livro> listarLivros() {
-        return livroService.listarLivros();
+    public ResponseEntity<List<Livro>> listarLivros() {
+        return ResponseEntity.ok(livroService.listarLivros());
     }
 
-    // Endpoint para atualizar um livro existente
     @PutMapping("/{id}")
     public ResponseEntity<Livro> atualizarLivro(@PathVariable Long id, @RequestBody Livro livroAtualizado) {
         Livro livro = livroService.atualizarLivro(id, livroAtualizado);
         return ResponseEntity.ok(livro);
     }
 
-    // Endpoint para deletar um livro pelo ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarLivro(@PathVariable Long id) {
         livroService.deletarLivro(id);
         return ResponseEntity.noContent().build();
     }
-
 }
