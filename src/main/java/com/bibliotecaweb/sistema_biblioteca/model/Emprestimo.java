@@ -9,26 +9,22 @@ import java.time.LocalDate;
 
 @Entity
 public class Emprestimo {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER) // Carrega o cliente automaticamente
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER) // Carrega o livro automaticamente
     @JoinColumn(name = "livro_id", nullable = false)
     private Livro livro;
 
-    @Column(nullable = false)
     private LocalDate dataEmprestimo;
-
-    @Column
     private LocalDate dataDevolucao;
 
-    // Getters e setters
+    // Getters e Setters
 
     public Long getId() {
         return id;

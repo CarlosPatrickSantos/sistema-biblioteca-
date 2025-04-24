@@ -1,65 +1,65 @@
-/* Corpo */
+/* Estilos globais */
+
+/* Centralizar os títulos das seções */
+.selecao-cliente h3, .selecao-livro h3 {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin: 20px auto; /* Adiciona espaçamento ao redor */
+    font-size: 22px; /* Tamanho maior para destaque */
+    color: #333333; /* Torna o texto mais visível */
+    font-weight: bold; /* Adiciona ênfase ao texto */
+}
+
 body {
-    background-color: #f5f5f5; /* Cinza claro para fundo neutro */
-    font-family: Arial, sans-serif;
-    color: #333333; /* Cor de texto mais escura para maior visibilidade */
+    background-color: #f5f5f5; /* Fundo cinza claro para suavidade */
+    font-family: Arial, sans-serif; /* Fonte padrão para leitura */
+    color: #333333; /* Texto em tom escuro para visibilidade */
     margin: 0;
     padding: 0;
 }
 
 /* Cabeçalho */
 header {
-    padding: 20px;
-    background-color: #007bff; /* Azul claro mais neutro */
-    text-align: center;
+    background-color: #007bff; /* Azul para destaque */
     color: white;
-    font-size: 24px; /* Texto mais visível */
+    padding: 20px;
+    text-align: center;
+    font-size: 24px; /* Título maior para ênfase */
 }
 
-/* Centralizar a seção de pesquisa */
+/* Pesquisa */
 .pesquisa-container {
-    display: flex; /* Usa Flexbox para organizar elementos */
-    flex-direction: column; /* Empilha os elementos verticalmente */
-    align-items: center; /* Centraliza os elementos horizontalmente */
-    margin: 20px auto; /* Adiciona espaço e centraliza no container */
+    background-color: #ffffff; /* Fundo branco para contraste */
+    width: 50%; /* Largura relativa para centralização */
+    margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff; /* Fundo branco para destaque */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-    width: 50%; /* Define a largura da seção */
-    text-align: center; /* Centraliza o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-align: center;
 }
 
 .pesquisa-container h2 {
-    margin-bottom: 20px;
     font-size: 22px;
-    color: #333333; /* Texto mais visível */
+    margin-bottom: 15px;
+    color: #333333;
 }
 
 .pesquisa-container form {
-    width: 100%; /* O formulário ocupa toda a largura */
-}
-
-.pesquisa-container label {
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .pesquisa-container select,
 .pesquisa-container input {
-    width: calc(100% - 20px); /* Ajusta largura do campo com margem */
+    width: 100%; /* Campos ocupam toda a largura */
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 10px 0;
     border: 1px solid #dddddd;
     border-radius: 4px;
+    font-size: 14px;
 }
 
 .pesquisa-container button {
-    width: 50%; /* Largura do botão Pesquisar */
-    padding: 10px;
-    background-color: #007bff; /* Azul suave */
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -70,43 +70,24 @@ header {
 .pesquisa-container button:hover {
     background-color: #0056b3; /* Azul mais escuro no hover */
 }
-/* Detalhes de empréstimo */
-.emprestimo-detalhes {
-    background-color: #ffffff; /* Fundo branco para contraste */
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 10px;
-    width: 80%;
-    text-align: left;
-    color: #333333; /* Texto mais visível */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
-}
-
-.emprestimo-detalhes label, 
-.emprestimo-detalhes input {
-    display: block;
-    margin: 10px 0;
-    font-size: 16px; /* Texto mais legível */
-}
 
 /* Tabelas */
 table {
-    margin: 20px auto; /* Centraliza a tabela */
     width: 80%;
-    border-collapse: collapse;
+    margin: 20px auto;
+    border-collapse: collapse; /* Remove espaçamento entre bordas */
     background-color: #ffffff; /* Fundo branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 table, th, td {
-    border: 1px solid #dddddd; /* Bordas suaves */
+    border: 1px solid #dddddd; /* Bordas leves */
 }
 
 th, td {
-    text-align: center; /* Centraliza o conteúdo das células */
     padding: 10px;
     text-align: left;
-    font-size: 14px;
-    color: #333333; /* Cor do texto */
+    font-size: 14px; /* Texto legível */
 }
 
 th {
@@ -114,33 +95,47 @@ th {
     font-weight: bold;
 }
 
-
-/* Centralizar os títulos das seções como "Selecione o Cliente" e "Selecione o Livro" */
-h3 {
-    text-align: center; /* Centraliza o texto horizontalmente */
-    margin: 20px 0; /* Adiciona espaçamento acima e abaixo */
-    font-size: 20px; /* Tamanho maior para destaque */
-    color: #333333; /* Torna o texto mais visível */
-}
-
-
-
-/* Botões */
-button {
+td button {
     background-color: #6c757d; /* Cinza neutro */
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-button:hover {
-    background-color: #5a6268; /* Cinza mais escuro para hover */
+td button:hover {
+    background-color: #5a6268; /* Cinza escuro no hover */
 }
 
-/* Centralizar os botões */
+/* Detalhes de empréstimo */
+.emprestimo-detalhes {
+    background-color: #ffffff; /* Contraste no formulário */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%; /* Largura relativa para centralização */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.emprestimo-detalhes label {
+    font-size: 16px; /* Texto mais visível */
+    display: block;
+    margin-top: 10px;
+}
+
+.emprestimo-detalhes input {
+    width: calc(100% - 20px); /* Ajusta com padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Botões do formulário */
 .botoes-centro {
     text-align: center;
     margin-top: 20px;
@@ -148,6 +143,17 @@ button:hover {
 
 .botoes-centro button {
     margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botoes-centro button:hover {
+    background-color: #0056b3; /* Azul mais escuro */
 }
 
 /* Botão de voltar */
@@ -158,7 +164,7 @@ button:hover {
 }
 
 .botao-voltar button {
-    background-color: #007bff; /* Azul mais suave */
+    background-color: #007bff; /* Azul vivo */
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -168,5 +174,5 @@ button:hover {
 }
 
 .botao-voltar button:hover {
-    background-color: #0056b3; /* Azul levemente mais escuro para hover */
+    background-color: #0056b3; /* Azul escuro no hover */
 }
